@@ -1,0 +1,60 @@
+import java.util.*;
+public class MyClass {
+
+	public static void main(String s[]){
+		
+		System.out.println("Hello");//Opening text	
+		System.out.println("Please type in the words'Hello' or 'World', or even a part of these words");
+		StringSubstring ss = new StringSubstring();
+		ss.findSubstring();
+		
+	}
+}
+
+class StringSubstring{
+	
+	Scanner sc = new Scanner(System.in);
+	String stringExample;
+	String userInput;
+	String answer;
+	
+	StringSubstring(){
+		
+		stringExample = "Hello World!";//main string used in program is 'Hello World!'
+	
+	}
+	
+	void findSubstring(){
+	
+		userInput = sc.next();
+		
+		if(stringExample.toLowerCase().contains(userInput.toLowerCase())){
+			System.out.println("Congratulations, you typed the right word");//printed if user input was present in our string example
+		}
+		else{
+			System.out.println("Sorry it doesnt seem like you typed the right word ");//printed if user input WAS NOT present in our string example
+			System.out.println("Do you wish to try again??");
+			questionUser();
+		}
+		
+	}
+	void questionUser(){
+		//this is an extra method which allows the user to decide whether they want to try again or leave the program
+		answer = sc.next();
+		if(answer.toLowerCase().equals("yes"))
+		{
+			System.out.println("Very well, please try typing the words again.");//if answer is yes, then they are redirected to the same program
+			findSubstring();
+		}
+		else if(answer.toLowerCase().equals("no")){
+			System.out.println("Very well, the program ends here");//if answer is no, then program ends
+			System.exit(0);
+		}
+		else{
+			System.out.println("Please type Yes or No");//makes sure that the user types either'yes' or 'no'
+			questionUser();
+		}
+		
+	}
+	
+}
