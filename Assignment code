@@ -29,10 +29,10 @@ class StringSubstring{
 		userInput = sc.next();
 		
 		if(stringExample.toLowerCase().contains(userInput.toLowerCase())){
-			System.out.println("Congratulations, you typed the right word");//printed if user input was present in our string example
+			System.out.println("Congratulations, you typed the right word. Substring Found!!");//printed if user input was present in our string example
 		}
 		else{
-			System.out.println("Sorry it doesnt seem like you typed the right word ");//printed if user input WAS NOT present in our string example
+			System.out.println("Sorry , SubString not Found. It seems like you didnt typed the right word ");//printed if user input WAS NOT present in our string example
 			System.out.println("Do you wish to try again??");
 			questionUser();
 		}
